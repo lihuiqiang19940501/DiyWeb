@@ -1,15 +1,29 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/pages/home.vue'
 
 Vue.use(Router)
 
-export default new Router({
+var router = new Router({
   routes: [
     {
       path: '/',
       name: 'home',
-      component: home
+      component: resolve => require(['@/pages/home.vue'], resolve),
+      // children: [
+      //   {
+      //     path: '/nav',
+      //     name: 'nav',
+      //     component: resolve => require(['@/components/HelloWorld.vue'], resolve),
+      //     meta: {title: 'nav'}
+      //   },
+      // ]
+    },
+    {
+      path: '/nav',
+      name: 'nav',
+      component: resolve => require(['@/components/HelloWorld.vue'], resolve),
     }
   ]
 })
+
+export default router
