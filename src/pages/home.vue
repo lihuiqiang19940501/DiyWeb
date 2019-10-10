@@ -16,7 +16,9 @@
       <div class="rigth">
         <div class="mark" :style="{marginTop:setInfoH-50+'px'}"></div>
         <div class="setInfo" :style="{marginTop:setInfoH-50+'px'}">
-          <p>当前id:{{activeId}}</p>
+          <p>组件id:{{activeId}}</p>
+          <span>属性设置:</span>
+          <span>背景颜色</span>
         </div>
       </div>
     </div>
